@@ -6,12 +6,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.Scanner;
 
 public class ConfigReader {
-	static String location = System.getenv("AF_HOME") == null ? "/Users/rajathirumal/Raja/code/java/CETL/dev/framework"
-			: System.getenv("AF_HOME");
+	static String location = System.getenv("AF_HOME") == null ? getFromCurrentDir() : System.getenv("AF_HOME");
 	public static final String FW_HOME;
 	private static final String CONFIG_FOLDER;
 	private static final String DEFAULT_FILE;
@@ -85,11 +85,26 @@ public class ConfigReader {
 		private static final ConfigReader INSTANCE = new ConfigReader();
 	}
 
+	private static String getFromCurrentDir() {
+		final String pwd = System.getProperty("user.dir");
+
+		String[] parts = pwd.split(Paths.get("").getFileSystem().getSeparator());
+
+		for (int i = 0; i < parts.length; i++) {
+			if ("jSpine".equals(parts[i])) {
+				return String.join(Paths.get("").getFileSystem().getSeparator(),
+						java.util.Arrays.copyOfRange(parts, 0, i + 1)) + Paths.get("").getFileSystem().getSeparator();
+			}
+		}
+		return pwd;
+
+	}
+
 	public static void main(String[] args) {
-		System.out.println(System.getProperty("user.dir"));
 		ConfigReader configReader = getInstance();
 		System.out.println(configReader.getStringProperty("fw.db.dbtype", (String) null));
 		System.out.println(configReader.getStringProperty("fw.home", (String) null));
 		System.out.println(configReader.getIntProperty("fw.db.timeout", true));
+		System.out.println(configReader.getStringProperty("fw.log.directory", ""));
 	}
 }

@@ -31,6 +31,10 @@ public class AFRun {
 	 *             argument is expected to be the name of the worker class.
 	 */
 	private void run(String[] args) {
+		// Was the program name passed in the argument ?
+		if (args.length < 1) {
+			System.err.println("No program specified for runnung");
+		}
 		String workerName = args[0];
 		String fullyQualifiedWorkerName = this.defaultPackageName + "." + workerName;
 		Method processMethod = null;
