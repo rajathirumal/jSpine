@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.af.foundation.AFCommon.AppTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.af.foundation.AFCommon.AppTest
