@@ -1,0 +1,5 @@
+com/custom/cetl/ProcessFunctionIlla.class
+com/custom/cetl/CustomExtractor.class
+com/custom/cetl/ExportPannala.class
+com/custom/cetl/CustomLoader.class
+com/custom/cetl/XmlExtractor.class
