@@ -1,4 +1,4 @@
-package com.spine.foundation.AFCommunicator;
+package com.spine.communicator;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

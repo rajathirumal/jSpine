@@ -85,8 +85,8 @@ public class TableDataExtract {
 		case Types.TIME:
 			// case Types.TIME_WITH_TIMEZONE:
 		case Types.TIMESTAMP:
-			// case Types.TIMESTAMP_WITH_TIMEZONE:
-			// return CATEGORY_DATETIME;
+		case Types.TIMESTAMP_WITH_TIMEZONE:
+			return CATEGORY_DATETIME;
 
 		case Types.BOOLEAN:
 			return CATEGORY_BOOLEAN;

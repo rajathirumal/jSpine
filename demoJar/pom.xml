@@ -36,10 +36,11 @@
 	</properties>
 
 	<dependencies>
+	
 		<dependency>
-			<groupId>com.spine.common</groupId>
-			<artifactId>SpineCommon</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<groupId>com.spine.core</groupId>
+			<artifactId>SpineCore</artifactId>
+			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
 

@@ -35,6 +35,7 @@ public class RequestHandeller {
    public static void main(String[] args) {
       String queString = "S//USER/user_id='john.doe1'";
       queString = "I/CETL_WORKER/WORKER_ID='SAMPLE2',WORK_NAME='Rendavathu WORKER ODA PER'";
+      queString = "S/USER_ID/USER";
       System.out.println((new RequestHandeller()).process(QueryOperation.EXECUTE_QUERY, queString));
    }
 }
