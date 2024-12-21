@@ -50,7 +50,7 @@ public class ExecuteSQL {
 		try {
 			this.connnection = ConnectionFactory.getConnection();
 		} catch (SpineCommunicatorExceptions connectionException) {
-			this.logger.error("Connection erroe :" + connectionException.getMessage());
+			this.logger.error("Connection error :" + connectionException.getMessage());
 			this.errorMessageBulder(connectionException.getMessage(), responseJsonObject,
 					SpineHttpStatusCodes.INTERNAL_SERVER_ERROR);
 		}
