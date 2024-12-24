@@ -40,6 +40,7 @@ public class ExecuteSQL {
 		String statusCodeDescription = statusCode.getDescription();
 		error_details.put("message", statusCodeDescription + " :" + message.trim());
 		responseJsonObject.put("response", error_details);
+		logger.error(message);
 	}
 
 	public JSONObject executeQueryStringRequest(String browserRequest) throws SpineCommunicatorExceptions {
@@ -126,12 +127,15 @@ public class ExecuteSQL {
 				this.errorMessageBulder("No data to show for the given selection", responseJsonObject,
 						SpineHttpStatusCodes.NO_CONTENT);
 			}
-		} catch (SQLException var6) {
-			if (!var6.getMessage().contains("Invalid object name")) {
-				throw new SpineCommunicatorExceptions("SELECT failed", var6);
+		} catch (SQLException exceptionDuringSelect) {
+			if (!exceptionDuringSelect.getMessage().contains("Invalid object name")) {
+				throw new SpineCommunicatorExceptions("SELECT failed", exceptionDuringSelect);
 			}
+			// There is no such table.
+			String messagearray[] = exceptionDuringSelect.getMessage().split(" ");
 
-			this.errorMessageBulder("No such table", responseJsonObject, SpineHttpStatusCodes.BAD_REQUEST);
+			this.errorMessageBulder("No such table " + messagearray[messagearray.length - 1], responseJsonObject,
+					SpineHttpStatusCodes.BAD_REQUEST);
 		}
 
 	}

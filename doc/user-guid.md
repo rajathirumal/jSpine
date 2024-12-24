@@ -4,7 +4,8 @@ This provides the step by step instruction to use jSpine to write your own bussi
 ## Setup
 This project when extracted will contains all the required components in a folder called jSpine. 
 
-    Note that this folder is your home folder for jSpine
+> [!NOTE] 
+> This folder is your home folder for jSpine
 
 The below will be the folder structure for the framework,
 ```bash
@@ -23,20 +24,16 @@ The below will be the folder structure for the framework,
 |   |   |-SpineCommunicator.jar
 |   |   |-SpineCore.jar
 |-.gitignore
-|   |
-|   |
-
-
-
 ```
 
-## Usage
 
 *Step 1* : Navigate to `conf/prop.default` set your own property file name.
 
 *Step 2* : The property file should follow the same syntax as the given sample property file [framework.properties](/conf/framework.properties)
 
 *Step 3* : Edit the details mentioned. You are good to use it.
+
+Start building your code. Refer to the [documentation](/doc/developer-guid.md) for the available functions.
 
 # Integration guid
 

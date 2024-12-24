@@ -9,3 +9,6 @@ FAQ | Guide
 How to write your logic | [User guid](doc/user-guid.md)
 Where can I use this logic | [Integration](doc/user-guid.md)
 How to contribute | [Developer guid](doc/developer-guid.md)
+
+> [!WARNING]
+> This project is a personal endeavor developed in my free time. While active development may vary, I welcome contributions and feedback from the community. I will do my best to continue development and am open to pull requests.
